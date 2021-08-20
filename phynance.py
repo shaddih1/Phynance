@@ -9,15 +9,20 @@ pythonVersion = sys.version_info
 if not pythonVersion.major == 3 and pythonVersion.minor >= 6:
     sys.exit("\nPhynance supports only pyhton3.6 or higher\n")
 
+from lib.common import messages
+from lib.common import orchestra
+from lib.common import tools
+from lib.common import utils
+
 # local classes
 def usage():
     parser = argparse.ArgumentParser(description="Phynance | Finance toolkit")
     parser.add_argument("-q", "--quiet", help="suppress header ", action="store_true")
     parser.add_argument("-l", "--list-options", help="list Phynance options",action="store_true")
     parser.add_argument("-o", "--option", help="set an option to start", metavar="<option>")
-#    if len(sys.argv) < 2:
-#        phynance = utils.MainMenu()
-#        phynance = phynance.start()
+    if len(sys.argv) < 2:
+        phynance = utils.MainMenu()
+        phynance = phynance.start()
     return parser.parse_args()
 
 def main():
