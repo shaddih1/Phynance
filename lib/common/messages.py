@@ -4,7 +4,7 @@ import os
 
 def getDir():
     get_dir = home_dir = os.path.expanduser("~")
-    return ger_dir
+    return get_dir
 
 get_dir = getDir()
 
